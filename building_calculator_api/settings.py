@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-import os
+import os, datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_extensions',
+    'organizations'
 ]
 
 MIDDLEWARE = [
@@ -137,3 +139,14 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
+
+
+#JWT Auth configuration
+
+JWT_AUTH  = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
+}
+
+
+# Auth User Model
+# AUTH_USER_MODEL = 'users.User'
