@@ -25,7 +25,7 @@ SECRET_KEY = '(1*t^*r^y_@aym8skwpsie)ih8%4+9p%8sdzljjae6#6st+ssb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'organizations',
     'roles',
-    'clients'
+    'clients',
+    'buildings'
 ]
 
 MIDDLEWARE = [
@@ -133,7 +134,8 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',

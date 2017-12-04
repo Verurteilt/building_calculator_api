@@ -17,8 +17,10 @@ Including another URLconf
 from rest_framework_jwt.views import obtain_jwt_token
 from django.conf.urls import url
 from django.contrib import admin
+from buildings.views import get_simple_apartment_info
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-token-auth/', obtain_jwt_token),
+    url(r'^get_simple_apartment_info/([0-9]+)/$', get_simple_apartment_info)
 ]

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<body>
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		First Name: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{firstName + " " + lastName}}
+
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope, $http) {
+			$http.get('http://localhost:8000/get_simple_apartment_info/1/', {
+				headers: {
+					'Access-Control-Allow-Origin': '*'
+				},
+				method: 'GET'
+			}).then(function(info){
+				console.log(info)
+			}, function(error){
+				console.log(error)
+			})
+		});
+	</script>
+
+</body>
+</html>

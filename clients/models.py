@@ -2,6 +2,7 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from organizations.models import Organizations
 from roles.models import Roles
+from buildings.models import Buildings
 
 
 class Clients(TimeStampedModel):
@@ -14,3 +15,8 @@ class Clients(TimeStampedModel):
 
 	def __str__(self):
 		return "{0} ({1})".format(self.full_name, self.email)
+
+
+class ClientBuildings(TimeStampedModel):
+	building = models.ForeignKey(Buildings, null=False)
+	client = models.ForeignKey(Clients, null=False)
