@@ -24,6 +24,6 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-token-auth/', obtain_jwt_token),
-    url(r'^get_simple_apartment_info/([0-9]+)/$', get_simple_apartment_info),
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-]
+    url(r'^get_simple_apartment_info/([0-9]+)/$', get_simple_apartment_info)
+
+] +  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
