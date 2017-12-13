@@ -156,4 +156,4 @@ JWT_AUTH  = {
 
 # Auth User Model
 # AUTH_USER_MODEL = 'users.User'
-CORS_ORIGIN_ALLOW_ALL = TRUE
+CORS_ORIGIN_ALLOW_ALL = True
