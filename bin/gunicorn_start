@@ -1,8 +1,8 @@
 #!/bin/bash
 
 NAME="building_calculator_api"                              #Name of the application (*)
-DJANGODIR=/opt/building_calculator_api/building_calculator_api             # Django project directory (*)
-SOCKFILE=/opt/building_calculator_api/building_calculator_api/run/gunicorn.sock        # we will communicate using this unix socket (*)
+DJANGODIR=/opt/building_calculator_api/             # Django project directory (*)
+SOCKFILE=/opt/building_calculator_api/run/gunicorn.sock        # we will communicate using this unix socket (*)
 USER=ubuntu                                        # the user to run as (*)
 GROUP=ubuntu                                     # the group to run as (*)
 NUM_WORKERS=1                                     # how many worker processes should Gunicorn spawn (*)
