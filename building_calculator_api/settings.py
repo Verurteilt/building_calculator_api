@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'organizations',
     'roles',
     'clients',
-    'buildings'
+    'buildings',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,4 @@ JWT_AUTH  = {
 
 # Auth User Model
 # AUTH_USER_MODEL = 'users.User'
+CORS_ORIGIN_ALLOW_ALL = TRUE
